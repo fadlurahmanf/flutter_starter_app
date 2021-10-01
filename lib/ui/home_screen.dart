@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_app/commons/commons_textstyle.dart';
 import 'package:flutter_starter_app/ui/example1/example1screen.dart';
 import 'package:get/get.dart';
 
@@ -24,8 +25,8 @@ class _HomeLayoutState extends State<HomeLayout> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(onPressed: (){
-          Get.to(const Example1Screen());
-        }, child: const Text("GO TO EXAMPLE 1")),
+          Get.to(Example1Screen());
+        }, child: Text("GO TO EXAMPLE 1", style: CommonsTextStyle.body18RegBlack,)),
       ),
     );
   }
