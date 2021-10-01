@@ -26,7 +26,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       body: Center(
         child: ElevatedButton(onPressed: (){
           Get.to(Example1Screen());
-        }, child: Text("GO TO EXAMPLE 1", style: CommonsTextStyle.body18RegBlack,)),
+        }, child: Text("GO TO EXAMPLE 1", style: CommonsTextStyle.body18RegBlackGrey,)),
       ),
     );
   }
