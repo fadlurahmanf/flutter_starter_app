@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:dio/dio.dart';
 import 'package:flutter_starter_app/core/http_client/handler_response.dart';
 import 'package:flutter_starter_app/core/module/dio_module/dio_module.dart';
 import 'package:flutter_starter_app/ui/example1/response/post_response.dart';
@@ -8,7 +7,7 @@ abstract class PostDataSources{
   FutureOr<PostResponse> getPost();
 }
 
-class PostDataImpl extends PostDataSources{
+class PostDataRepository extends PostDataSources{
 
   @override
   FutureOr<PostResponse> getPost() {

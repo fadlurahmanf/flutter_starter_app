@@ -9,6 +9,6 @@ class LocatorModule{
   static void init(){
     locator.registerSingleton(UtilsSharedPreferences());
     locator.registerSingleton(HttpClientDio(buildConfig: GetIt.I()));
-    locator.registerFactory(() => PostDataImpl());
+    locator.registerFactory(() => PostDataRepository());
   }
 }
