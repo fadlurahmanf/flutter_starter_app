@@ -8,6 +8,7 @@ class MainModule{
       {required BuildConfig Function() buildConfig}) async{
     GetIt.I.registerLazySingleton(() => buildConfig());
     WidgetsFlutterBinding.ensureInitialized();
+    loadModules();
   }
 
   static Future<void> loadModules()async{
