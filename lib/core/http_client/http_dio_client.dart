@@ -1,10 +1,18 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_starter_app/utils/build_config.dart';
+import 'package:get_it/get_it.dart';
 
-extension HttpClientDio on Dio {
-  Dio init(BuildConfig buildConfig) {
-    options.baseUrl = buildConfig.baseUrl;
-    if (buildConfig.debug) interceptors.add(LogInterceptor(responseBody: true));
-    return this;
+class HttpClientDio{
+  BuildConfig buildConfig;
+  HttpClientDio({required this.buildConfig});
+  Dio get dioClient => _dio();
+  Dio _dio(){
+  final options = BaseOptions(
+      baseUrl: buildConfig.baseUrl,
+      connectTimeout: 60000,
+      receiveTimeout: 60000,
+  );
+  var dio = Dio(options);
+  return dio;
   }
 }
