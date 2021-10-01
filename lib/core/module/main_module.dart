@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_starter_app/core/module/dio_module/dio_module.dart';
 import 'package:flutter_starter_app/core/module/locator_module/locator_module.dart';
 import 'package:flutter_starter_app/utils/build_config.dart';
 import 'package:get_it/get_it.dart';
@@ -13,5 +14,6 @@ class MainModule{
 
   static Future<void> loadModules()async{
     LocatorModule.init();
+    DioModule.init();
   }
 }
