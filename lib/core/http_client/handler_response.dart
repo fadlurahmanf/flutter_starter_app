@@ -8,8 +8,7 @@ Future<T> handleResponse<T>(
     final result = await request();
     return onSuccess(result);
   } on DioError catch (e) {
-    var message = DioException.fromDioError(e);
-    // print("MASUK $message");
+    var message = DioException.fromError(e);
     throw message;
   } catch (e) {
     var message = e.toString();
