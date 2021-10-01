@@ -8,8 +8,8 @@ class HttpClientDio{
   Dio _dio(){
   final options = BaseOptions(
       baseUrl: buildConfig.baseUrl,
-      connectTimeout: 6000,
-      receiveTimeout: 6000,
+      connectTimeout: 1,
+      receiveTimeout: 1,
   );
   var dio = Dio(options);
   return dio;

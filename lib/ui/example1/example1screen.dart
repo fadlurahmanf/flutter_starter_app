@@ -47,8 +47,10 @@ class _Example1LayoutState extends State<Example1Layout> {
                 return Center(child: CircularProgressIndicator(),);
               }else if(state is GetPostSuccess){
                 return Center(child: Text("BODY NYA ADALAH ${state.postResponse.body}"));
-              }else{
-                return Text("ERROR");
+              }else if(state is GetPostFailed){
+                return Text("ERROR ${state.message}");
+              }else {
+                return Text("BELUM ADA DATA");
               }
             },
           ),

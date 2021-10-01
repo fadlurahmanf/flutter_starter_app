@@ -9,11 +9,10 @@ Future<T> handleResponse<T>(
     return onSuccess(result);
   } on DioError catch (e) {
     var message = DioException.fromDioError(e);
-    print("MASUK ERROR DIO ${message.message}");
+    // print("MASUK $message");
     throw message;
   } catch (e) {
     var message = e.toString();
-    print("MASUK ERROR $message");
     throw message;
   }
 }

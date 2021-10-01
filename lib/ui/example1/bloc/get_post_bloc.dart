@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_starter_app/core/dio_exception/dio_exception.dart';
 import 'package:flutter_starter_app/core/module/locator_module/locator_module.dart';
 import 'package:flutter_starter_app/ui/example1/bloc/get_post_event.dart';
 import 'package:flutter_starter_app/ui/example1/bloc/get_post_state.dart';
@@ -17,7 +18,11 @@ class GetPostBloc extends Bloc<GetPostEvent, GetPostState>{
         var data = await postDataImpl.getPost();
         yield GetPostSuccess(postResponse: data);
       }catch(e){
-        yield GetPostFailed(message: e.toString());
+        if(e is DioException){
+          yield GetPostFailed(message: e.message);
+        }else{
+          yield GetPostFailed(message: e.toString());
+        }
       }
     }
   }
