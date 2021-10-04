@@ -8,10 +8,7 @@ class GetPostState extends Equatable{
 
 class GetPostInit extends GetPostState {}
 
-class GetPostLoading extends GetPostState{
-  @override
-  List<Object?> get props => [];
-}
+class GetPostLoading extends GetPostState{}
 
 class GetPostSuccess extends GetPostState{
   final PostResponse postResponse;
